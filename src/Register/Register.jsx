@@ -1,8 +1,10 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+
 
   const handlerShowPassword = () => {
     setShowPassword(!showPassword);
@@ -20,7 +22,9 @@ const Register = () => {
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
-              <input type="text" name="text" placeholder="Type your name" className="input input-bordered" required />
+              <input id="name-v" type="text" name="text" placeholder="Type your name" className="input input-bordered" required />
+
+
             </div>
             <div className="form-control">
               <label className="label">
@@ -33,11 +37,11 @@ const Register = () => {
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
+              <input type={showPassword ? 'text' : 'password'} name="password" placeholder="password" className="input input-bordered" required />
               <div className="mt-4">
-                <span onClick={handlerShowPassword} className={`cursor-pointer  ${showPassword ? "text-[#1a73e8] font-bold" : "text-black"}  `}>
+                <button type="button" onClick={handlerShowPassword} className={`cursor-pointer  ${showPassword ? 'text-[#1a73e8] font-bold' : 'text-black'}  `}>
                   Show Password
-                </span>
+                </button>
               </div>
 
               <label className="mt-4 text-lg ">
@@ -49,10 +53,10 @@ const Register = () => {
                 </span>
               </label>
             </div>
-            <p className="text-red-600 font-medium"></p>
+            <p className="text-red-600 font-medium" />
 
             <div className="form-control mt-6">
-              <button className="btn btn-primary">SIGN UP</button>
+              <button type="button" className="btn btn-primary">SIGN UP</button>
             </div>
           </form>
         </div>

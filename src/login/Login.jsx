@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,17 +24,19 @@ const Login = () => {
               <input type="email" name="email" placeholder="email" className="input input-bordered" />
             </div>
 
+
+
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" />
+              <input type={showPassword ? 'text' : 'password'} name="password" placeholder="password" className="input input-bordered" />
             </div>
 
             <div className="mt-4">
-              <span onClick={handlerShowPassword} className={`cursor-pointer  ${showPassword ? "text-[#1a73e8] font-bold" : "text-black"}  `}>
+              <button type="button" onClick={handlerShowPassword} className={`cursor-pointer  ${showPassword ? 'text-[#1a73e8] font-bold' : 'text-black'}  `}>
                 Show Password
-              </span>
+              </button>
             </div>
 
             <div className="flex justify-between items-center">
@@ -49,9 +52,9 @@ const Login = () => {
                 </span>
               </label>
             </div>
-            <p className="text-red-600 font-medium"></p>
+            <p className="text-red-600 font-medium" />
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button type="button" className="btn btn-primary">Login</button>
             </div>
           </form>
         </div>
