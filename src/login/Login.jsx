@@ -1,12 +1,10 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
   const handlerShowPassword = () => {
-    setShowPassword(!showPassword);
+  setShowPassword(!showPassword);
   };
 
   return (
