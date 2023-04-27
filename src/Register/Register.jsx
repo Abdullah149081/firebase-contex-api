@@ -14,8 +14,8 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     createUser(email, password)
-      .then((userRegister) => {
-        const newUser = userRegister.user;
+      .then(() => {
+        // const newUser = userRegister.user;
         form.reset();
       })
       .catch((err) => {

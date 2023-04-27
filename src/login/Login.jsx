@@ -15,8 +15,8 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     signInUser(email, password)
-      .then((userLogin) => {
-        const logUser = userLogin.user;
+      .then(() => {
+        // const logUser = userLogin.user;
       })
       .catch((err) => {
         setError(err.message);
