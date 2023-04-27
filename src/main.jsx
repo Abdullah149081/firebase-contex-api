@@ -3,11 +3,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
+import Order from "./components/Order/Order";
 import "./index.css";
 import Main from "./layout/Main";
 import Login from "./login/Login";
 import AuthProvider from "./providers/AuthProvider";
 import Register from "./Register/Register";
+import PrivateRoutes from "./routes/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <Register />,
+      },
+      {
+        path: "/order",
+        element: (
+          <PrivateRoutes>
+            <Order />,
+          </PrivateRoutes>
+        ),
       },
     ],
   },
