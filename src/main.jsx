@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Order from "./components/Order/Order";
+import Profile from "./components/Profile";
 import "./index.css";
 import Main from "./layout/Main";
 import Login from "./login/Login";
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <Register />,
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoutes>
+            <Profile />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/order",

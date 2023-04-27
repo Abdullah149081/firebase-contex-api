@@ -50,14 +50,16 @@ const Header = () => {
           <li>
             <Link to="/order">Order</Link>
           </li>
+          {users && (
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+          )}
           <li>
             <Link to="/login">login</Link>
           </li>
           <li>
             <Link to="/sign-up">sign up</Link>
-          </li>
-          <li>
-            <Link to="/">Item 3</Link>
           </li>
         </ul>
       </div>
