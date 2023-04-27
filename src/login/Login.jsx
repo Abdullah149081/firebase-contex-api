@@ -17,7 +17,6 @@ const Login = () => {
     signInUser(email, password)
       .then((userLogin) => {
         const logUser = userLogin.user;
-        console.log(logUser);
       })
       .catch((err) => {
         setError(err.message);
