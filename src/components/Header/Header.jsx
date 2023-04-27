@@ -66,7 +66,7 @@ const Header = () => {
       <div className="navbar-end space-x-4">
         {users ? (
           <>
-            <span className="font-medium">{users.email}</span>
+            <span className="font-medium hidden lg:block">{users.email}</span>
             <button onClick={handlerLogOut} className="btn" type="button">
               Sign out
             </button>
@@ -76,9 +76,11 @@ const Header = () => {
             <Link to="/login">login</Link>
           </span>
         )}
-        <Link to="/" className="btn">
-          Get started
-        </Link>
+        <span className="hidden lg:block">
+          <Link to="/" className="btn ">
+            Get started
+          </Link>
+        </span>
       </div>
     </div>
   );
