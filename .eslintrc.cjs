@@ -12,6 +12,7 @@ module.exports = {
   plugins: ["react-refresh"],
   rules: {
     "react-refresh/only-export-components": "warn",
+    "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": 0,
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "react/jsx-one-expression-per-line": 0,

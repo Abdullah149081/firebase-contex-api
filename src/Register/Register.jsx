@@ -1,8 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { userContext } from "../providers/AuthProvider";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const { createUser } = useContext(userContext);
+
+  const handlerRegister = (e) => {
+    setError("");
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    createUser(email, password)
+      .then((userRegister) => {
+        const newUser = userRegister.user;
+        form.reset();
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  };
+
   const handlerShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -14,7 +34,7 @@ const Register = () => {
           <h1 className="text-2xl lg:text-5xl font-bold">Please Register!</h1>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form onSubmit={handlerRegister} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -48,10 +68,10 @@ const Register = () => {
                 </span>
               </label>
             </div>
-            <p className="text-red-600 font-medium" />
+            <p className="text-red-600 font-medium">{error}</p>
 
             <div className="form-control mt-6">
-              <button type="button" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary">
                 SIGN UP
               </button>
             </div>

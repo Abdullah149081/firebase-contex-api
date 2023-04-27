@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import { userContext } from "../../providers/AuthProvider";
+
 const Home = () => {
-  return <div></div>;
+  const { user } = useContext(userContext);
+  console.log(user);
+  return <div />;
 };
 
 export default Home;

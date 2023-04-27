@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -12,17 +13,21 @@ const Header = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <Link>login</Link>
+              <Link to="/login">login</Link>
             </li>
             <li>
-              <Link className="justify-between">Sign up</Link>
+              <Link to="/sign-up" className="justify-between">
+                Sign up
+              </Link>
             </li>
             <li>
-              <Link>Item 3</Link>
+              <Link to="/">Item 3</Link>
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">Firebase context</Link>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          Firebase context
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-bold">
@@ -36,12 +41,14 @@ const Header = () => {
             <Link to="/sign-up">sign up</Link>
           </li>
           <li>
-            <Link>Item 3</Link>
+            <Link to="/">Item 3</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn">Get started</Link>
+        <Link to="/" className="btn">
+          Get started
+        </Link>
       </div>
     </div>
   );
