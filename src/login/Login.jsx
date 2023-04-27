@@ -5,7 +5,7 @@ import { userContext } from "../providers/AuthProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const { signInUser } = useContext(userContext);
+  const { signInUser, googleSignIn } = useContext(userContext);
 
   const handlerLogin = (event) => {
     setError("");
@@ -23,18 +23,23 @@ const Login = () => {
         setError(err.message);
       });
   };
+  const handlerGoogleSign = () => {
+    googleSignIn()
+      .then(() => {})
+      .catch(() => {});
+  };
 
   const handlerShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
   return (
-    <div className="hero mt-20">
-      <div className="hero-content flex-col w-full  lg:w-5/6 ">
+    <div className="hero mt-20 ">
+      <div className="hero-content  flex-col w-full  lg:w-5/6 ">
         <div className="text-center ">
           <h1 className="text-2xl lg:text-5xl font-bold">Please Login!</h1>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card border flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handlerLogin} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -73,6 +78,11 @@ const Login = () => {
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-primary">
                 Login
+              </button>
+            </div>
+            <div className="form-control mt-2">
+              <button onClick={handlerGoogleSign} type="button" className="btn border-0  bg-[#d34836] hover:bg-[#d34836]">
+                Google
               </button>
             </div>
           </form>
